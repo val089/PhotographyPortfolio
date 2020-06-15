@@ -1,12 +1,12 @@
 //colors
 $main-first-color: #F04E3C;
 $main-second-color: #fff;
-$portfolio-bgcolor: #121212;
+$section-bgcolor: #121212;
 
 //font sizes
 $h1-font-size: 2.5rem;
 $main-p-font-size: 7rem;
-$portfolio-font-size: 5rem;
+$main-font-size: 5rem;
 $main-a-font-size: 1.5rem;
 $p-font-size: 1.6rem;
 
@@ -24,7 +24,8 @@ html {
     font-size: 10px;
 }
 
-body {
+body,
+html {
     overflow-x: hidden;
 }
 
@@ -32,13 +33,46 @@ a {
     text-decoration: none;
 }
 
-.header {
-    padding-left: 4rem;
+.btn {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    font-family: 'Prompt', sans-serif;
+    font-size: $main-a-font-size;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $main-second-color;
+    background-color: $main-first-color;
+    border-radius: .4rem;
+    box-shadow: 3px 3px 1rem rgba(0,0,0,0.4);
+    position: relative;
+}
+
+.btn::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
+    height: 100%;
+    background-color: inherit;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.2) scaleY(1.6);
+    opacity: 0;
+    transition: all .5s;
+}
+
+.header {
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
     color: #fff;
     display: flex;
 }
@@ -58,6 +92,7 @@ a {
 
         .hero-textbox {
             padding-left: 10rem;
+            z-index: 20;
 
             h1 {
                 font-family: $first-family-font;
@@ -74,23 +109,12 @@ a {
                 color: $main-second-color;
                 margin-bottom: 5rem;
             }
-
-            a {
-                padding: 1.5rem 3rem;
-                font-family: 'Prompt', sans-serif;
-                font-size: $main-a-font-size;
-                font-weight: 400;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                color: $main-second-color;
-                background: $main-first-color;
-            }
         }
     }
 }
 
 .portfolio {
-    background: $portfolio-bgcolor;
+    background: $section-bgcolor;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,7 +122,7 @@ a {
 
     .portfolio-title {
         text-align: center;
-        padding: 10rem 0;
+        padding: 10rem;
 
         h3,
         p {
@@ -107,7 +131,7 @@ a {
         }
     
         h3 {
-            font-size: $portfolio-font-size;
+            font-size: $main-font-size;
             text-transform: uppercase;
             letter-spacing: 1rem;
             font-family: $second-family-font;
@@ -214,11 +238,28 @@ a {
             grid-area: img-8;
             background-image: url(../images/gallery/photo08.JPG);
         }
+    }
+}
 
-        // .img-9 {
-        //     grid-area: img-9;
-        //     background-image: url(../images/gallery/photo09.JPG);
-        // }
+.info {
+    background: $section-bgcolor;
+    min-height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .info-item {
+        z-index: 20;
+        padding: 4rem;
+
+        .info-text {
+            color: $main-second-color;
+            font-size: $main-font-size;
+            font-family: $second-family-font;
+            margin-bottom: 5rem;
+            line-height: 7rem;
+        }
+
     }
 }
 
@@ -229,28 +270,110 @@ a {
             grid-template-areas: 
             'img-1 img-1 img-2 img-2'
             'img-1 img-1 img-3 img-3'
-            'img-4 img-4 img-5 img-5'
+            'img-6 img-6 img-4 img-4'
 
-            'img-6 img-7 img-7 img-7'
+            'img-6 img-6 img-5 img-5'
+            'img-7 img-7 img-7 img-7'
             'img-8 img-8 img-8 img-8';
-    
-        }
 
-        a {
-            height: 20rem;
-        }
 
-        .img-1 {
-            min-height: 40rem;
-        }
+            a {
+                height: 20rem;
+            }
 
-        .img-6 {
-            min-height: 20rem;
-        }
+            .img-1 {
+                min-height: 40rem;
+            }
 
-        .img-7 {
-            min-height: 50rem;
+            .img-6 {
+                min-height: 40rem;
+            }
         }
     }
 
+    .info {
+        .info-item {
+            .info-text {
+                font-size: 4rem;
+            }
+    
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .hero {
+        .hero-content {
+            .hero-textbox {
+                padding: 5rem;
+
+                h1 {
+                    font-size: 2rem;
+                }
+    
+                p {
+                    font-size: 5rem;
+                }
+            }
+        }
+    }  
+}
+
+@media screen and (max-width: 600px) {
+    .portfolio {
+
+        .gallery {
+            grid-template-areas: 
+            'img-1 img-1 img-1 img-1'
+            'img-2 img-2 img-2 img-2'
+            'img-3 img-3 img-3 img-3'
+            'img-4 img-4 img-4 img-4'
+            'img-5 img-5 img-5 img-5'
+            'img-6 img-6 img-6 img-6'
+            'img-7 img-7 img-7 img-7'
+            'img-8 img-8 img-8 img-8';
+
+            a, 
+            .img-1,
+            .img-6 {
+                min-height: 30rem;
+                height: 30rem;
+            }
+        }
+    }
+
+    .info {
+        .info-item {
+            .info-text {
+                font-size: 3rem;
+            }
+    
+        }
+    }
+
+    .hero {
+        .hero-content {
+            .hero-textbox {
+                padding: 2rem;
+
+                h1 {
+                    text-shadow: 1px 1px 4px #000;
+                }
+    
+                p {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    }   
+
+    .portfolio {
+    
+        .portfolio-title {
+    
+            h3 {
+                font-size: 3rem;
+            }
+        }
+    }
 }

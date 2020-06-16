@@ -11,7 +11,7 @@
 <body>
 
 	<header class="header">
-		<a href="#" class="logo">
+		<a href="index.html" class="logo">
 			<img src="images/logo.png" alt="">
 		</a>
 	</header>
@@ -33,28 +33,28 @@
 		</div>
 		<div class="gallery">
 
-			<a href="images/gallery/photo01.JPG" class="img-1">
+			<a href="images/gallery/photo01.JPG" class="img-1" target="_blank" rel="noopener noreferrer">
 				<ion-icon name="expand-outline"></ion-icon>
 			</a>
-			<a href="images/gallery/photo02.jpg" class="img-2">
+			<a href="images/gallery/photo02.jpg" class="img-2" target="_blank" rel="noopener noreferrer">
 				<ion-icon name="expand-outline"></ion-icon>
 			</a>
-			<a href="images/gallery/photo03.JPG" class="img-3">
+			<a href="images/gallery/photo03.JPG" class="img-3" target="_blank" rel="noopener noreferrer">
 				<ion-icon name="expand-outline"></ion-icon>
 			</a>
-			<a href="images/gallery/photo04.JPG" class="img-4">
+			<a href="images/gallery/photo04.JPG" class="img-4" target="_blank" rel="noopener noreferrer">
 				<ion-icon name="expand-outline"></ion-icon>
 			</a>
-			<a href="images/gallery/photo05.jpg" class="img-5">
+			<a href="images/gallery/photo05.jpg" class="img-5" target="_blank" rel="noopener noreferrer">
 				<ion-icon name="expand-outline"></ion-icon>
 			</a>
-			<a href="images/gallery/photo06.JPG" class="img-6">
+			<a href="images/gallery/photo06.JPG" class="img-6" target="_blank" rel="noopener noreferrer">
 				<ion-icon name="expand-outline"></ion-icon>
 			</a>
-			<a href="images/gallery/photo07.JPG" class="img-7">
+			<a href="images/gallery/photo07.JPG" class="img-7" target="_blank" rel="noopener noreferrer">
 				<ion-icon name="expand-outline"></ion-icon>
 			</a>
-			<a href="images/gallery/photo08.JPG" class="img-8">
+			<a href="images/gallery/photo08.JPG" class="img-8" target="_blank" rel="noopener noreferrer">
 				<ion-icon name="expand-outline"></ion-icon>
 			</a>
 			
@@ -70,10 +70,15 @@
 				my profile on Pixabay.
 			 </p>
 			 
-			 <a href="https://pixabay.com/users/kamilszerlag-16578543/" class="btn">Click here</a>
+			 <a href="https://pixabay.com/users/kamilszerlag-16578543/" class="btn" target="_blank" rel="noopener noreferrer">Click here</a>
 		</div>
 	</section>
 
 	<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+	<script>
+        gsap.fromTo('.logo', {x: -200, opacity: 0}, {duration: 1, delay: .5, x: 0, opacity: 1});
+		gsap.fromTo('.hero-textbox', {y: 80, opacity: 0}, {duration: 1, delay: 1.3, y: 0, opacity: 1});
+	</script>
 </body>
 </html>

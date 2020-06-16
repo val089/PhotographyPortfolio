@@ -27,6 +27,7 @@ html {
 body,
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -80,7 +81,7 @@ a {
 .hero {
     width: 100%;
     height: 100vh;
-    background-image: url(images/bg-hero.png) right no-repeat;
+    background: url(../images/bg-hero.jpg) right no-repeat;
     background-size: cover;
     position: relative;
 
@@ -89,7 +90,7 @@ a {
         justify-content: left;
         align-items: center;
         height: 100vh;
-
+        
         .hero-textbox {
             padding-left: 10rem;
             z-index: 100;
